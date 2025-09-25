@@ -1,0 +1,9 @@
+top.sv
+audio.v
+audio_dac.v
+audio_defs.v
+audio_spdif.v
+sigma_dac.v
+audio_fifo.v
+spdif_core.v
+audio_i2s.v

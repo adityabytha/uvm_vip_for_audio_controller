@@ -1,0 +1,27 @@
+# UVM_HOME = /home/cvrlab/Documents/406/ces_uvm-1.2_2021.09/uvm-1.2
+UVM_VERBOSITY = UVM_NONE
+TEST = audio_main_test
+
+XELAB = xrun -uvm -uvmhome $(UVM_HOME) -uvmtest $(TEST) +UVM_VERBOSITY=$(UVM_VERBOSITY) -access +rwc -covoverwrite -covtest $(TEST)
+
+all: comp run waveform
+
+verdi-cov: comp run cov
+
+simulation: comp run
+
+comp:
+	$(XELAB) -elaborate -f filelist.f
+
+run:
+	$(XELAB) -R -f filelist.f
+
+waveform:
+	$(XELAB) -R -input waveform
+
+cov:
+	imc -load coverage.dir/test-coverage.udb -report -detail
+
+clean:
+	rm -rf xcelium.d xrun.log *.history *.shm *.udb *.key
+

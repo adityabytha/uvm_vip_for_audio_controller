@@ -1,0 +1,28 @@
+# UVM_HOME = /home/cvrlab/Documents/406/ces_uvm-1.2_2021.09/uvm-1.2
+UVM_VERBOSITY = UVM_NONE
+TEST = audio_main_test
+
+QUESTA = vlog -sv +incdir+$(UVM_HOME) +define+UVM_NO_DEPRECATED +UVM_VERBOSITY=$(UVM_VERBOSITY)
+VSIM = vsim -c -do "run -all; exit" -coverage -classdebug +UVM_TESTNAME=$(TEST)
+
+all: comp run waveform
+
+verdi-cov: comp run cov
+
+simulation: comp run
+
+comp:
+	$(QUESTA) -work work -f filelist.f
+
+run:
+	$(VSIM) work.top
+
+waveform:
+	vsim -view waveform
+
+cov:
+	vcover report -details coverage.ucdb
+
+clean:
+	rm -rf work transcript vsim.wlf *.log *.vcd *.ucdb
+

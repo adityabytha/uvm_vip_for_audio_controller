@@ -1,0 +1,34 @@
+#UVM_HOME = /home/cvrlab/Documents/406/ces_uvm-1.2_2021.09/uvm-1.2
+UVM_VERBOSITY = UVM_NONE
+TEST = audio_i2s_test
+
+
+
+VCS =	vcs -full64 -sverilog -timescale=1ns/1ps -ntb_opts uvm-1.2 \
+		-debug_access+all -cm_tgl mda -lca -cm line+cond+fsm+tgl+path
+
+SIMV = ./simv +UVM_VERBOSITY=$(UVM_VERBOSITY) \
+	+UVM_TESTNAME=$(TEST) -cm line+cond+fsm+tgl+path
+	
+VERDI = verdi -sv -f filelist.f -ssf *.fsdb
+
+all:	comp run waveform
+
+verdi-cov: comp run cov
+
+simulation: comp run
+
+comp:
+	$(VCS) top.sv
+
+run:
+	$(SIMV)
+	
+waveform:
+	$(VERDI)
+
+cov:
+	verdi -cov
+
+clean:
+	rm -rf csrc simv* ucli.key vc_hdrs.h DVEfiles *.log *.vpd *.vcd verdiLog novas* *.vdb *.fsdb vfastLog verdi_config_file *Log* *.vdb
