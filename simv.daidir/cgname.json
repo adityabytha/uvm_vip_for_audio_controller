@@ -1,0 +1,116 @@
+{
+    "_vcs_DPI_package": [
+        "_vcs_DPI_package",
+        "uM9F1",
+        "module",
+        1
+    ],
+    "vcs_paramclassrepository": [
+        "vcs_paramclassrepository",
+        "hEeZs",
+        "module",
+        2
+    ],
+    "_vcs_unit__4238169956": [
+        "_vcs_unit__4238169956",
+        "L0v0S",
+        "module",
+        3
+    ],
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        4
+    ],
+    "uvm_pkg": [
+        "uvm_pkg",
+        "zr7M1",
+        "module",
+        5
+    ],
+    "_vcs_msglog": [
+        "_vcs_msglog",
+        "zQBzV",
+        "module",
+        6
+    ],
+    "uvm_custom_install_recording": [
+        "uvm_custom_install_recording",
+        "nhiwz",
+        "module",
+        7
+    ],
+    "uvm_custom_install_verdi_recording": [
+        "uvm_custom_install_verdi_recording",
+        "EbjT3",
+        "module",
+        8
+    ],
+    "audio_intf": [
+        "audio_intf",
+        "AFbpn",
+        "module",
+        9
+    ],
+    "audio_dac_intf": [
+        "audio_dac_intf",
+        "mGNv9",
+        "module",
+        10
+    ],
+    "audio_i2s_intf": [
+        "audio_i2s_intf",
+        "PQA2W",
+        "module",
+        11
+    ],
+    "audio_spdif_intf": [
+        "audio_spdif_intf",
+        "y1Zju",
+        "module",
+        12
+    ],
+    "audio_spdif": [
+        "audio_spdif",
+        "q7B6y",
+        "module",
+        13
+    ],
+    "audio_i2s": [
+        "audio_i2s",
+        "TJRqx",
+        "module",
+        14
+    ],
+    "audio_fifo": [
+        "audio_fifo",
+        "FHD6h",
+        "module",
+        15
+    ],
+    "audio_dac": [
+        "audio_dac",
+        "iguME",
+        "module",
+        16
+    ],
+    "audio": [
+        "audio",
+        "S2VWN",
+        "module",
+        17
+    ],
+    "top": [
+        "top",
+        "Emx8S",
+        "module",
+        18
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        19
+    ]
+}

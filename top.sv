@@ -76,6 +76,7 @@ import uvm_pkg::*;
 module top;
 	reg clk_i,rst_i;
 	reg audio_clk_i;	
+
 	initial begin
 		clk_i = 1;
 		forever #`HALF_CLK_I_FULL clk_i = ~clk_i;
@@ -93,6 +94,18 @@ module top;
 		#`DELAY_2;
 		rst_i = 0;
 	end
+
+	int runs;
+	initial begin 
+
+		if (!$value$plusargs("runs=%d", runs)) begin
+        		runs = 1; // default value
+		end
+		uvm_resource_db#(int)::set("*","runs",runs,null);
+	end
+
+
+
 
 //------------------------------------------
 //		MAIN AUDIO DUT INSTANTIATION 

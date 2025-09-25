@@ -1,0 +1,1066 @@
+*design* DebussyLib (btIdent Verdi_U-2023.03-SP1)
+Command arguments:
+    +define+verilog
+    -sv
+    -f filelist.f
+        top.sv
+        audio.v
+        audio_dac.v
+        audio_defs.v
+        audio_spdif.v
+        sigma_dac.v
+        audio_fifo.v
+        spdif_core.v
+        audio_i2s.v
+
+
+*Error* `include file "uvm_pkg.sv" cannot be read
+"top.sv", 7: 
+
+*Error* `include file "uvm_macros.svh" cannot be read
+"top.sv", 9: 
+
+*Error* failed to find the package 'uvm_pkg'.
+"top.sv", 8: 
+
+*Warning* failed to find the class 'uvm_sequence_item'.
+"audio_tx.sv", 3: 
+
+*Error* macro `uvm_object_utils_begin not defined
+"audio_tx.sv", 33: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 34: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 35: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 36: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 37: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 38: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 39: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 40: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 41: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 42: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 44: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 45: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 46: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 47: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 48: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 49: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 50: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 51: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 52: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 53: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 54: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 55: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 56: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 57: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 58: 
+
+*Error* macro `uvm_object_utils_end not defined
+"audio_tx.sv", 59: 
+
+*Warning* failed to find the class 'uvm_sequence_item'.
+"audio_tx.sv", 89: 
+
+*Error* macro `uvm_object_utils_begin not defined
+"audio_tx.sv", 101: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 103: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 104: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 105: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 106: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 107: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 108: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 109: 
+
+*Error* macro `uvm_object_utils_end not defined
+"audio_tx.sv", 110: 
+
+*Warning* failed to find the class 'uvm_sequence_item'.
+"audio_tx.sv", 117: 
+
+*Error* macro `uvm_object_utils_begin not defined
+"audio_tx.sv", 132: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 134: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 135: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 136: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 137: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 138: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 139: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 140: 
+
+*Error* macro `uvm_field_int not defined
+"audio_tx.sv", 141: 
+
+*Error* macro `uvm_object_utils_end not defined
+"audio_tx.sv", 142: 
+
+*Warning* failed to find the class 'uvm_sequence_item'.
+"i2s_tx.sv", 2: 
+
+*Error* macro `uvm_object_utils_begin not defined
+"i2s_tx.sv", 18: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 20: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 21: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 22: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 23: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 24: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 25: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 26: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 27: 
+
+*Error* macro `uvm_field_int not defined
+"i2s_tx.sv", 28: 
+
+*Error* macro `uvm_object_utils_end not defined
+"i2s_tx.sv", 29: 
+
+*Warning* failed to find the class 'uvm_subscriber'.
+"main_cov.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"main_cov.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"main_cov.sv", 7: 
+
+*Error* Syntax error at parent
+"main_cov.sv", 90: 
+
+*Error* Syntax error at t
+"main_cov.sv", 100: 
+
+*Warning* failed to find the class 'uvm_monitor'.
+"main_mon.sv", 6: 
+
+*Error* Syntax error at #
+"main_mon.sv", 7: 
+
+*Error* macro `uvm_component_utils not defined
+"main_mon.sv", 9: 
+
+*Error* Syntax error at parent
+"main_mon.sv", 10: 
+
+*Error* Syntax error at phase
+"main_mon.sv", 14: 
+
+*Error* Syntax error at super
+"main_mon.sv", 15: 
+
+*Error* macro `uvm_error not defined
+"main_mon.sv", 18: 
+
+*Error* macro `uvm_info not defined
+"main_mon.sv", 20: 
+
+*Error* Syntax error at phase
+"main_mon.sv", 23: 
+
+*Error* macro `uvm_info not defined
+"main_mon.sv", 24: 
+
+*Warning* failed to find the class 'uvm_driver'.
+"main_driver.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"main_driver.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"main_driver.sv", 7: 
+
+*Error* Syntax error at parent
+"main_driver.sv", 8: 
+
+*Error* Syntax error at phase
+"main_driver.sv", 13: 
+
+*Error* macro `uvm_info not defined
+"main_driver.sv", 15: 
+
+*Error* Syntax error at phase
+"main_driver.sv", 32: 
+
+*Error* macro `uvm_info not defined
+"main_driver.sv", 39: 
+
+*Warning* failed to find the class 'uvm_sequencer'.
+"main_sequencer.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"main_sequencer.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"main_sequencer.sv", 7: 
+
+*Error* Syntax error at parent
+"main_sequencer.sv", 8: 
+
+*Warning* failed to find the class 'uvm_subscriber'.
+"spdif_cov.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"spdif_cov.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"spdif_cov.sv", 7: 
+
+*Error* Syntax error at parent
+"spdif_cov.sv", 21: 
+
+*Error* Syntax error at t
+"spdif_cov.sv", 27: 
+
+*Warning* failed to find the class 'uvm_monitor'.
+"spdif_mon.sv", 6: 
+
+*Error* Syntax error at #
+"spdif_mon.sv", 7: 
+
+*Error* macro `uvm_component_utils not defined
+"spdif_mon.sv", 9: 
+
+*Error* Syntax error at parent
+"spdif_mon.sv", 10: 
+
+*Error* Syntax error at phase
+"spdif_mon.sv", 14: 
+
+*Error* Syntax error at super
+"spdif_mon.sv", 15: 
+
+*Error* macro `uvm_error not defined
+"spdif_mon.sv", 18: 
+
+*Error* macro `uvm_info not defined
+"spdif_mon.sv", 20: 
+
+*Error* Syntax error at phase
+"spdif_mon.sv", 24: 
+
+*Error* macro `uvm_info not defined
+"spdif_mon.sv", 25: 
+
+*Warning* failed to find the class 'uvm_sequencer'.
+"spdif_sequencer.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"spdif_sequencer.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"spdif_sequencer.sv", 7: 
+
+*Error* Syntax error at parent
+"spdif_sequencer.sv", 8: 
+
+*Warning* failed to find the class 'uvm_driver'.
+"spdif_driver.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"spdif_driver.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"spdif_driver.sv", 7: 
+
+*Error* Syntax error at parent
+"spdif_driver.sv", 8: 
+
+*Error* Syntax error at phase
+"spdif_driver.sv", 12: 
+
+*Error* macro `uvm_info not defined
+"spdif_driver.sv", 14: 
+
+*Error* Syntax error at phase
+"spdif_driver.sv", 27: 
+
+*Error* macro `uvm_info not defined
+"spdif_driver.sv", 34: 
+
+*Warning* failed to find the class 'uvm_subscriber'.
+"i2s_cov.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"i2s_cov.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"i2s_cov.sv", 7: 
+
+*Error* Syntax error at parent
+"i2s_cov.sv", 23: 
+
+*Error* Syntax error at t
+"i2s_cov.sv", 29: 
+
+*Warning* failed to find the class 'uvm_monitor'.
+"i2s_mon.sv", 6: 
+
+*Error* Syntax error at #
+"i2s_mon.sv", 7: 
+
+*Error* macro `uvm_component_utils not defined
+"i2s_mon.sv", 9: 
+
+*Error* Syntax error at parent
+"i2s_mon.sv", 10: 
+
+*Error* Syntax error at phase
+"i2s_mon.sv", 14: 
+
+*Error* Syntax error at super
+"i2s_mon.sv", 15: 
+
+*Error* macro `uvm_error not defined
+"i2s_mon.sv", 18: 
+
+*Error* macro `uvm_info not defined
+"i2s_mon.sv", 20: 
+
+*Error* Syntax error at phase
+"i2s_mon.sv", 24: 
+
+*Error* macro `uvm_info not defined
+"i2s_mon.sv", 25: 
+
+*Warning* failed to find the class 'uvm_sequencer'.
+"i2s_sequencer.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"i2s_sequencer.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"i2s_sequencer.sv", 7: 
+
+*Error* Syntax error at parent
+"i2s_sequencer.sv", 8: 
+
+*Warning* failed to find the class 'uvm_driver'.
+"i2s_driver.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"i2s_driver.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"i2s_driver.sv", 7: 
+
+*Error* Syntax error at parent
+"i2s_driver.sv", 8: 
+
+*Error* Syntax error at phase
+"i2s_driver.sv", 13: 
+
+*Error* macro `uvm_info not defined
+"i2s_driver.sv", 15: 
+
+*Error* Syntax error at phase
+"i2s_driver.sv", 55: 
+
+*Error* macro `uvm_info not defined
+"i2s_driver.sv", 68: 
+
+*Warning* failed to find the class 'uvm_subscriber'.
+"dac_cov.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"dac_cov.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"dac_cov.sv", 7: 
+
+*Error* Syntax error at parent
+"dac_cov.sv", 21: 
+
+*Error* Syntax error at t
+"dac_cov.sv", 27: 
+
+*Warning* failed to find the class 'uvm_monitor'.
+"dac_mon.sv", 6: 
+
+*Error* Syntax error at #
+"dac_mon.sv", 7: 
+
+*Error* macro `uvm_component_utils not defined
+"dac_mon.sv", 9: 
+
+*Error* Syntax error at parent
+"dac_mon.sv", 10: 
+
+*Error* Syntax error at phase
+"dac_mon.sv", 14: 
+
+*Error* Syntax error at super
+"dac_mon.sv", 15: 
+
+*Error* macro `uvm_error not defined
+"dac_mon.sv", 18: 
+
+*Error* macro `uvm_info not defined
+"dac_mon.sv", 20: 
+
+*Error* Syntax error at phase
+"dac_mon.sv", 24: 
+
+*Error* macro `uvm_info not defined
+"dac_mon.sv", 25: 
+
+*Warning* failed to find the class 'uvm_sequencer'.
+"dac_sequencer.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"dac_sequencer.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"dac_sequencer.sv", 7: 
+
+*Error* Syntax error at parent
+"dac_sequencer.sv", 8: 
+
+*Warning* failed to find the class 'uvm_driver'.
+"dac_driver.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"dac_driver.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"dac_driver.sv", 7: 
+
+*Error* Syntax error at parent
+"dac_driver.sv", 8: 
+
+*Error* Syntax error at phase
+"dac_driver.sv", 12: 
+
+*Error* macro `uvm_info not defined
+"dac_driver.sv", 14: 
+
+*Error* Syntax error at phase
+"dac_driver.sv", 27: 
+
+*Error* macro `uvm_info not defined
+"dac_driver.sv", 34: 
+
+*Warning* failed to find the class 'uvm_agent'.
+"dac_agent.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"dac_agent.sv", 7: 
+
+*Error* Syntax error at parent
+"dac_agent.sv", 12: 
+
+*Error* Syntax error at phase
+"dac_agent.sv", 14: 
+
+*Error* macro `uvm_info not defined
+"dac_agent.sv", 19: 
+
+*Error* Syntax error at phase
+"dac_agent.sv", 22: 
+
+*Error* macro `uvm_info not defined
+"dac_agent.sv", 25: 
+
+*Warning* failed to find the class 'uvm_agent'.
+"i2s_agent.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"i2s_agent.sv", 7: 
+
+*Error* Syntax error at parent
+"i2s_agent.sv", 12: 
+
+*Error* Syntax error at phase
+"i2s_agent.sv", 14: 
+
+*Error* macro `uvm_info not defined
+"i2s_agent.sv", 19: 
+
+*Error* Syntax error at phase
+"i2s_agent.sv", 22: 
+
+*Error* macro `uvm_info not defined
+"i2s_agent.sv", 25: 
+
+*Warning* failed to find the class 'uvm_agent'.
+"main_agent.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"main_agent.sv", 7: 
+
+*Error* Syntax error at parent
+"main_agent.sv", 12: 
+
+*Error* Syntax error at phase
+"main_agent.sv", 14: 
+
+*Error* macro `uvm_info not defined
+"main_agent.sv", 19: 
+
+*Error* Syntax error at phase
+"main_agent.sv", 22: 
+
+*Error* macro `uvm_info not defined
+"main_agent.sv", 25: 
+
+*Warning* failed to find the class 'uvm_agent'.
+"spdif_agent.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"spdif_agent.sv", 7: 
+
+*Error* Syntax error at parent
+"spdif_agent.sv", 12: 
+
+*Error* Syntax error at phase
+"spdif_agent.sv", 14: 
+
+*Error* macro `uvm_info not defined
+"spdif_agent.sv", 19: 
+
+*Error* Syntax error at phase
+"spdif_agent.sv", 22: 
+
+*Error* macro `uvm_info not defined
+"spdif_agent.sv", 25: 
+
+*Warning* failed to find the class 'uvm_env'.
+"audio_env.sv", 6: 
+
+*Error* macro `uvm_component_utils not defined
+"audio_env.sv", 7: 
+
+*Error* Syntax error at parent
+"audio_env.sv", 12: 
+
+*Error* Syntax error at phase
+"audio_env.sv", 17: 
+
+*Error* macro `uvm_info not defined
+"audio_env.sv", 22: 
+
+*Error* macro `uvm_info not defined
+"audio_env.sv", 27: 
+
+*Error* macro `uvm_info not defined
+"audio_env.sv", 32: 
+
+*Error* macro `uvm_info not defined
+"audio_env.sv", 37: 
+
+*Error* macro `uvm_info not defined
+"audio_env.sv", 44: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 11: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 11: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 12: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 20: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 22: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 23: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 23: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 27: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 29: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 30: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 31: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 31: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 35: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 40: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 46: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 57: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 67: 
+
+*Error* Syntax error at end
+"seq_lib.sv", 76: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 77: 
+
+*Error* Syntax error at endtask
+"seq_lib.sv", 78: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 82: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 82: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 83: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 101: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 103: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 104: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 104: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 108: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 110: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 111: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 112: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 112: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 116: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 121: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 126: 
+
+*Error* Syntax error at end
+"seq_lib.sv", 132: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 133: 
+
+*Error* Syntax error at endtask
+"seq_lib.sv", 134: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 139: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 139: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 140: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 145: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 147: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 148: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 148: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 152: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 154: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 155: 
+
+*Error* Syntax error at ==
+"seq_lib.sv", 156: 
+
+*Error* Syntax error at }
+"seq_lib.sv", 156: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 160: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 165: 
+
+*Error* macro `uvm_do_with not defined
+"seq_lib.sv", 171: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 186: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 198: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 198: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 199: 
+
+*Error* macro `uvm_do not defined
+"seq_lib.sv", 208: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 212: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 222: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 222: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 223: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 228: 
+
+*Error* macro `uvm_do not defined
+"seq_lib.sv", 236: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 240: 
+
+*Warning* failed to find the class 'uvm_sequence'.
+"seq_lib.sv", 252: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 252: 
+
+*Error* macro `uvm_object_utils not defined
+"seq_lib.sv", 253: 
+
+*Error* macro `uvm_do not defined
+"seq_lib.sv", 262: 
+
+*Error* macro `uvm_info not defined
+"seq_lib.sv", 266: 
+
+*Warning* failed to find the class 'uvm_test'.
+"test_lib.sv", 7: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 8: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 9: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 14: 
+
+*Error* macro `uvm_info not defined
+"test_lib.sv", 16: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 19: 
+
+*Error* macro `uvm_info not defined
+"test_lib.sv", 21: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 31: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 32: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 34: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 39: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 56: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 57: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 59: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 64: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 76: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 77: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 79: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 84: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 96: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 97: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 99: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 104: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 120: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 121: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 122: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 127: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 144: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 145: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 146: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 151: 
+
+*Error* macro `uvm_component_utils not defined
+"test_lib.sv", 167: 
+
+*Error* Syntax error at parent
+"test_lib.sv", 168: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 169: 
+
+*Error* Syntax error at phase
+"test_lib.sv", 174: 
+
+*Error* Module audio redefined
+"audio.v", 40: 
+
+*Error* Module audio_dac redefined
+"audio_dac.v", 35: 
+
+*Error* Module audio_spdif redefined
+"audio_spdif.v", 35: 
+
+*Error* Module sigma_dac redefined
+"sigma_dac.v", 34: 
+
+*Error* Module audio_fifo redefined
+"audio_fifo.v", 35: 
+
+*Error* Module fifo_ram_dp_2048_11 redefined
+"audio_fifo.v", 166: 
+
+*Error* Module spdif_core redefined
+"spdif_core.v", 63: 
+
+*Error* Module audio_i2s redefined
+"audio_i2s.v", 35: 
+Highest level modules:
+top
+
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"main_cov.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"main_driver.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"main_sequencer.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"spdif_cov.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"spdif_sequencer.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"spdif_driver.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"i2s_cov.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"i2s_sequencer.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"i2s_driver.sv", 6: 
+
+*Warning* 'uvm_subscriber' is not a parameter type.
+"dac_cov.sv", 6: 
+
+*Warning* 'uvm_sequencer' is not a parameter type.
+"dac_sequencer.sv", 6: 
+
+*Warning* 'uvm_driver' is not a parameter type.
+"dac_driver.sv", 6: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 11: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 82: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 139: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 198: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 222: 
+
+*Warning* 'uvm_sequence' is not a parameter type.
+"seq_lib.sv", 252: 
+
+*Error* failed to find identifier uvm_resource_db(int)::set
+"top.sv", 104: 
+
+*Error* failed to find identifier uvm_config_db(audio_intf)::set
+"top.sv", 146: 
+
+*Error* failed to find identifier uvm_root::get
+"top.sv", 146: 
+
+*Error* failed to find identifier uvm_config_db(audio_dac_intf)::set
+"top.sv", 174: 
+
+*Error* failed to find identifier uvm_root::get
+"top.sv", 174: 
+
+*Error* failed to find identifier uvm_config_db(audio_i2s_intf)::set
+"top.sv", 201: 
+
+*Error* failed to find identifier uvm_root::get
+"top.sv", 201: 
+
+*Error* failed to find identifier uvm_config_db(audio_spdif_intf)::set
+"top.sv", 230: 
+
+*Error* failed to find identifier uvm_root::get
+"top.sv", 230: 
+
+*Error* failed to find identifier run_test
+"top.sv", 239: 
+Total	281 error(s),   68 warning(s)

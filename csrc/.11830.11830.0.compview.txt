@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1758788062.532904148, "rt":0.76, "ut":0.02, "st":0.01}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1758788062.386738546}
+{"VCS_COMP_START_TIME": 1758788062.386738546}
+{"VCS_COMP_END_TIME": 1758788063.309555070}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -timescale=1ns/1ps -ntb_opts uvm-1.2 -debug_access+all -cm_tgl mda -lca -cm line+cond+fsm+tgl+path +define+RUNS=10 top.sv"}

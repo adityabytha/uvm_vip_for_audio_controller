@@ -11,9 +11,12 @@
 class audio_seq extends uvm_sequence#(audio_tx);
 	`uvm_object_utils(audio_seq)
 	`NEW_OBJ
-	
+	int runs;	
 	task body();
-		repeat(1_000) begin
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+		repeat(runs) begin
 		`uvm_do_with(req, {req.cfg_awaddr_i[7:0] >= `AUDIO_FIFO_WRITE;
 					 req.cfg_awaddr_i[7:0] <= (`AUDIO_FIFO_WRITE + 8'd32);
 								req.cfg_arvalid_i == 1;
@@ -79,9 +82,13 @@ endclass
 class main_i2s extends uvm_sequence#(audio_tx);
 	`uvm_object_utils(main_i2s)
 	`NEW_OBJ
-	
+	int runs;
 	task body();
-		repeat(1_00) begin
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+
+		repeat(runs) begin
 				/*`uvm_do_with(req, {req.cfg_awaddr_i[7:0] inside {8'h00,8'h4,8'h8,8'hc,8'h20};req.cfg_awvalid_i == 1;
 								req.cfg_arvalid_i == 0;
 								req.cfg_bready_i == 1;})
@@ -132,7 +139,7 @@ endclass
 class main_spdif extends uvm_sequence#(audio_tx);
 	`uvm_object_utils(main_spdif)
 	`NEW_OBJ
-	
+	int runs;	
 	task body();
 		//repeat(1_0) begin
 			`uvm_do_with(req, {req.cfg_awaddr_i[7:0] >= `AUDIO_FIFO_WRITE;
@@ -191,9 +198,13 @@ endclass
 class spdif_seq extends uvm_sequence#(spdif_tx);
 	`uvm_object_utils(spdif_seq)
 	`NEW_OBJ
-	
+	int runs;
 	task body();
-		repeat(1_000) begin
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+
+		repeat(runs) begin
 		`uvm_do(req)
 		//`uvm_do_with(req, { req.inport_tdata_i <= 32'h80000000;})
 		#`AUDIO_CLK_FULL;				
@@ -216,8 +227,12 @@ endclass
 class i2s_seq extends i2s_seq_base;
 	`uvm_object_utils(i2s_seq)
 	`NEW_OBJ
+	int runs;
 	task body();
-		repeat(1_000) begin
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+		repeat(runs) begin
 		`uvm_do(req)
 		
 		#`AUDIO_CLK_FULL;	
@@ -227,6 +242,7 @@ class i2s_seq extends i2s_seq_base;
 	
 endclass
 
+		
 
 //------------------------------------------
 //			DAC SEQUENCE 
@@ -236,9 +252,13 @@ endclass
 class dac_seq extends uvm_sequence#(dac_tx);
 	`uvm_object_utils(dac_seq)
 	`NEW_OBJ
-	
+	int runs;
 	task body();
-		repeat(1_000) begin
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+
+		repeat(runs) begin
 		`uvm_do(req)
 		//#22675.7;				
 		#`AUDIO_CLK_FULL;

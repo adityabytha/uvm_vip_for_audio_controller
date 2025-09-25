@@ -1,0 +1,21 @@
+rc file Version 1.0
+
+[Design]
+COMPILE_PATH=/home/pcs/Documents/Aditya_data/minor_project
+VCS_HOME=/home/pcs/synopsys/vcs/U-2023.03/
+VERDI_HOME=/home/pcs/synopsys/verdi/U-2023.03-SP1/
+SystemC=FALSE
+UUM=FALSE
+KDB=FALSE
+USE_NOVAS_HOME=FALSE
+COSIM=FALSE
+TOP=uvm_custom_install_recording uvm_custom_install_verdi_recording top 
+OPTION=-ssv -ssy 
+ELAB_OPTION=-ssv -ssy 
+
+[Value]
+WREALX=ffff534e50535f58
+WREALZ=ffff534e50535f5a
+
+[CompInfo]
+FLOW_OPTS=-ssv -ssy 
