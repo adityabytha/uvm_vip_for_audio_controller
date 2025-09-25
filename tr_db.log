@@ -1,2 +1,0 @@
-  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.i2s_agent_i.sqr STREAM:620}
-  CREATE_STREAM @0 {NAME:seq T:Transactions SCOPE:uvm_test_top.env.main_agent_i.sqr STREAM:620}
