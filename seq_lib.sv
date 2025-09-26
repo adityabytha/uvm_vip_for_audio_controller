@@ -267,3 +267,78 @@ class dac_seq extends uvm_sequence#(dac_tx);
 	endtask	
 	
 endclass
+
+
+//----------------------------------------------
+//		CFG SEQUENCE - Sept 26 2025 
+//----------------------------------------------
+
+class cfg_seq extends uvm_sequence#(audio_tx);
+	`uvm_object_utils(cfg_seq)
+	`NEW_OBJ
+	int runs;	
+	task body();
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+		repeat(runs) begin
+			//cfg write to audio_cfg
+
+			#`AUDIO_CLK_FULL;
+			`uvm_do_with(req, {req.cfg_awaddr_i[7:0] == `AUDIO_CFG;
+						req.cfg_awvalid_i == 1;
+						req.cfg_arvalid_i == 0;
+						req.cfg_bready_i == 1;
+						req.cfg_wvalid_i == 1;
+						req.cfg_wdata_i[`AUDIO_CFG_BUFFER_RST_R] == 0;
+						req.cfg_wdata_i[`AUDIO_CFG_VOL_CTRL_R] == 3'd5;
+						req.cfg_wdata_i[`AUDIO_CFG_TARGET_R] == 2'd1;
+						req.cfg_wdata_i[`AUDIO_CFG_INT_THRESHOLD_R] == 16'hffff;
+
+						req.cfg_wdata_i[`AUDIO_CFG_BYTE_SWAP_R] == 2'd0;
+
+						req.cfg_wdata_i[`AUDIO_CFG_CH_SWAP_R] == 2'd0;
+
+			})
+			
+			#`CLK_I_FULL;
+			//cfg rd to audio_cfg
+			//`uvm_do_with(req, {	req.cfg_arvalid_i == 1;
+			//			req.cfg_araddr_i[7:0] == `AUDIO_CFG;
+		//				req.cfg_rready_i == 1;
+		//									
+		//	})
+
+			#`CLK_I_FULL;
+			`uvm_do_with(req, {req.cfg_awaddr_i[7:0] == `AUDIO_CLK_DIV;
+						req.cfg_awvalid_i == 1;
+						req.cfg_arvalid_i == 0;
+						req.cfg_bready_i == 1;
+						req.cfg_wvalid_i == 1;
+						req.cfg_wdata_i[`AUDIO_CLK_DIV_WHOLE_CYCLES_R] == 16'd272;
+						req.cfg_wdata_i[31:16] == 16'd0;
+
+			})
+			#`CLK_I_FULL;
+			#`CLK_I_FULL;
+			`uvm_do_with(req, {	req.cfg_arvalid_i == 1;
+						req.cfg_araddr_i[7:0] == `AUDIO_CFG;
+						req.cfg_rready_i == 1;
+											
+			})
+			#`CLK_I_FULL;
+			#`CLK_I_FULL;
+			`uvm_do_with(req, {	req.cfg_arvalid_i == 1;
+						req.cfg_araddr_i[7:0] == `AUDIO_CLK_DIV;
+						req.cfg_rready_i == 1;
+											
+			})
+			#`CLK_I_FULL;
+			#`CLK_I_FULL;
+	
+		end
+		`uvm_info("AUDIO_SEQ","Running",UVM_HIGH)
+	endtask	
+	
+endclass
+

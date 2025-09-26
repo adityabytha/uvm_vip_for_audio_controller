@@ -59,7 +59,10 @@ class audio_tx extends uvm_sequence_item;
 	`uvm_object_utils_end
 	
 	`NEW_OBJ
-	
+
+	constraint awaddr_values {	cfg_awaddr_i[31:8] == 24'b0;	}
+
+	constraint araddr_values {	cfg_araddr_i[31:8] == 24'b0;	}
 	/*constraint awaddr { 
 		if(cfg_awaddr_i[7:0] == 8'h00)
 		{

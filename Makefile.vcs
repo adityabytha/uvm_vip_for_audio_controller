@@ -1,9 +1,9 @@
 #UVM_HOME = /home/cvrlab/Documents/406/ces_uvm-1.2_2021.09/uvm-1.2
 UVM_VERBOSITY = UVM_NONE
-TEST = audio_main_test
+TEST = cfg_test
 
 seed = 1
-runs = 10
+runs = 1
 
 VCS =	vcs -full64 -sverilog -timescale=1ns/1ps -ntb_opts uvm-1.2 \
 		-debug_access+all -cm_tgl mda -lca -cm line+cond+fsm+tgl+path \
@@ -13,7 +13,7 @@ SIMV = ./simv +UVM_VERBOSITY=$(UVM_VERBOSITY) \
 	+UVM_TESTNAME=$(TEST) -cm line+cond+fsm+tgl+path \
 	+UVM_NO_RELNOTES +SEED=$(seed) +runs=$(runs)
 	
-VERDI = verdi -sv -f filelist.f -ssf *.fsdb
+VERDI = verdi -sv -f filelist.f -ssf *.fsdb &
 
 all:	comp run waveform
 

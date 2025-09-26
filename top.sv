@@ -9,7 +9,7 @@ import uvm_pkg::*;
 `include "uvm_macros.svh"
 
 //define Timing clocks
-`define CLK_I_FULL 83.33 		//for 44.1KHZ
+/*`define CLK_I_FULL 83.33 		//for 44.1KHZ
 `define HALF_CLK_I_FULL 41.66 
 `define AUDIO_CLK_FULL 22676	//for 32x44.1khz
 `define AUDIO_HALF_CLK_I_FULL 11338 
@@ -17,6 +17,22 @@ import uvm_pkg::*;
 `define AUDIO_CLK_FULL_10 226760
 `define DELAY_20 45352
 `define FULL_100 2267600
+*/
+
+//define Timing clocks according to ultra-embedded
+//He told audio_clk_i clock rate should be 44.1Khz - 22.5792Mhz
+//and clk_i should be more than 2 x audio_clk_i
+//	44.288ns of time period for 22.5792Mhz clock
+//	and clk_i time period = 22.144 if exactly double of audio_clk_i freq
+`define CLK_I_FULL 22.144 		//for 44.1KHZ
+`define HALF_CLK_I_FULL 11.072 
+`define AUDIO_CLK_FULL 44.288	//for 32x44.1khz
+`define AUDIO_HALF_CLK_I_FULL 22.144 
+`define DELAY_2 44.288
+`define AUDIO_CLK_FULL_10 442.88
+`define DELAY_20 884
+`define FULL_100 4428.8
+
 
 //including interface files
 `include "audio_intf.sv"
