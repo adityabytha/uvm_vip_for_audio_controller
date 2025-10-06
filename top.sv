@@ -23,12 +23,12 @@ import uvm_pkg::*;
 //He told audio_clk_i clock rate should be 44.1Khz - 22.5792Mhz
 //and clk_i should be more than 2 x audio_clk_i
 //	44.288ns of time period for 22.5792Mhz clock
-//	and clk_i time period = 22.144 if exactly double of audio_clk_i freq
-`define CLK_I_FULL 22.144 		//for 44.1KHZ
-`define HALF_CLK_I_FULL 11.072 
-`define AUDIO_CLK_FULL 44.288	//for 32x44.1khz
+//	and clk_i time period = 20ns more than double freq 
+`define CLK_I_FULL 20 		
+`define HALF_CLK_I_FULL 10 
+`define AUDIO_CLK_FULL 44.288	//for 44.1khz
 `define AUDIO_HALF_CLK_I_FULL 22.144 
-`define DELAY_2 44.288
+`define DELAY_2 40
 `define AUDIO_CLK_FULL_10 442.88
 `define DELAY_20 884
 `define FULL_100 4428.8
@@ -107,7 +107,7 @@ module top;
 	
 	initial begin
 		rst_i = 1;
-		#`DELAY_2;
+		#`CLK_I_FULL;
 		rst_i = 0;
 	end
 

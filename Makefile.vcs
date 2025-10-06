@@ -1,6 +1,6 @@
 #UVM_HOME = /home/cvrlab/Documents/406/ces_uvm-1.2_2021.09/uvm-1.2
 UVM_VERBOSITY = UVM_NONE
-TEST = cfg_test
+TEST = cfg_test_i2s
 
 seed = 1
 runs = 1

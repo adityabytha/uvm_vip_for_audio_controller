@@ -206,3 +206,26 @@ class cfg_test extends audio_base_test;
 	
 endclass
 
+//------------------------------------------
+//		CFG TEST FOR I2S 
+//------------------------------------------
+
+class cfg_test_i2s extends audio_base_test;
+	`uvm_component_utils(cfg_test_i2s)
+	`NEW
+	//factory.set_type_overrride_by_name("audio_tx","spdif_tx");
+	function void build_phase(uvm_phase phase);
+		super.build_phase(phase);	
+		uvm_resource_db#(int)::set("GLOBAL","AGENT_SELECT",4'h1,null);
+	endfunction
+	
+	task run_phase(uvm_phase phase);
+		cfg_seq_i2s seq;
+		seq = cfg_seq_i2s::type_id::create("seq");
+		phase.raise_objection(this);
+		phase.phase_done.set_drain_time(this,`DELAY_2);
+		seq.start(env.main_agent_i.sqr);
+		phase.drop_objection(this);	
+	endtask
+	
+endclass
