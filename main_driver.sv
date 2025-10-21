@@ -21,7 +21,7 @@ class main_driver extends uvm_driver#(audio_tx);
 		vif.cfg_awaddr_i <= tx.cfg_awaddr_i;
 		vif.cfg_wvalid_i <= tx.cfg_wvalid_i;
 		vif.cfg_wdata_i <= tx.cfg_wdata_i;
-		vif.cfg_wstrb_i <= tx.cfg_wstrb_i;
+	//	vif.cfg_wstrb_i <= tx.cfg_wstrb_i;
 		vif.cfg_bready_i <= tx.cfg_bready_i;
 		vif.cfg_arvalid_i <= tx.cfg_arvalid_i;
 		vif.cfg_araddr_i <= tx.cfg_araddr_i;

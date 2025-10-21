@@ -30,8 +30,8 @@ import uvm_pkg::*;
 `define AUDIO_HALF_CLK_I_FULL 22.144 
 `define DELAY_2 40
 `define AUDIO_CLK_FULL_10 442.88
-`define DELAY_20 884
-`define FULL_100 4428.8
+`define DELAY_10 200
+`define FULL_100 2000
 
 
 //including interface files
@@ -60,6 +60,8 @@ import uvm_pkg::*;
 `include "audio_tx.sv"
 `include "i2s_tx.sv"
 //`include ".sv"
+`include "i2s_ref_model.sv"
+`include "main_scoreboard.sv"
 `include "main_cov.sv"
 `include "main_mon.sv"
 `include "main_driver.sv"

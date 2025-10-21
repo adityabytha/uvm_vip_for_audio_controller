@@ -29,6 +29,7 @@ class i2s_cov extends uvm_subscriber#(i2s_tx);
 	function void write(T t);
 		$cast(tx,t);
 		i2s_cg.sample();
+//		tx.print();
 	endfunction
 
 

@@ -2,19 +2,18 @@
 
 class audio_tx extends uvm_sequence_item;
 	
-
    rand bit         cfg_awvalid_i;
    rand bit [31:0]  cfg_awaddr_i;
    rand bit         cfg_wvalid_i;
    rand bit [31:0]  cfg_wdata_i;
-   rand bit [3:0]   cfg_wstrb_i;
+   //rand bit [3:0]   cfg_wstrb_i;
    rand bit         cfg_bready_i;
    rand bit         cfg_arvalid_i;
    rand bit [31:0]  cfg_araddr_i;
    rand bit         cfg_rready_i;
 
 
-	bit         cfg_awready_o;
+    bit         cfg_awready_o;
     bit         cfg_wready_o;
     bit         cfg_bvalid_o;
     bit [1:0]   cfg_bresp_o;
@@ -35,7 +34,7 @@ class audio_tx extends uvm_sequence_item;
 		`uvm_field_int(cfg_awaddr_i,UVM_ALL_ON)
 		`uvm_field_int(cfg_wvalid_i,UVM_ALL_ON)
 		`uvm_field_int(cfg_wdata_i,UVM_ALL_ON)
-		`uvm_field_int(cfg_wstrb_i,UVM_ALL_ON)
+	//	`uvm_field_int(cfg_wstrb_i,UVM_ALL_ON)
 		`uvm_field_int(cfg_bready_i,UVM_ALL_ON)
 		`uvm_field_int(cfg_arvalid_i,UVM_ALL_ON)
 		`uvm_field_int(cfg_araddr_i,UVM_ALL_ON)

@@ -4,6 +4,7 @@
 
 
 class i2s_mon extends uvm_monitor;
+//	uvm_analysis_port#(i2s_evt_t) ap_port;
 	uvm_analysis_port#(i2s_tx) ap_port;
 	virtual audio_i2s_intf vif;
 	`uvm_component_utils(i2s_mon)
@@ -24,18 +25,19 @@ class i2s_mon extends uvm_monitor;
 	task run_phase(uvm_phase phase);
 		`uvm_info("i2s_MON","Run Phase",UVM_HIGH)
 		forever begin
-			@(vif.inport_tdata_i);
-			tx = new("i2s_tx_MON");
-			tx.inport_tvalid_i = vif.inport_tvalid_i;
-			tx.inport_tdata_i = vif.inport_tdata_i;
-			tx.inport_tstrb_i = vif.inport_tstrb_i;
-			tx.inport_tlast_i = vif.inport_tlast_i;
-			tx.inport_tdest_i = vif.inport_tdest_i;
-			tx.inport_tready_o = vif.inport_tready_o;
-			tx.i2s_sck_o = vif.i2s_sck_o;
-			tx.i2s_sdata_o = vif.i2s_sdata_o;
-			tx.i2s_ws_o = vif.i2s_ws_o;
-			ap_port.write(tx);
+			#`AUDIO_CLK_FULL;
+			if(vif.inport_tready_o) begin
+				@(negedge vif.i2s_sck_o);
+				repeat(32) begin
+					@(negedge vif.i2s_sck_o);
+					tx = new("i2s_tx_MON");
+					tx.i2s_sdata_o = vif.i2s_sdata_o;
+					tx.i2s_ws_o = vif.i2s_ws_o;
+					tx.print();
+					ap_port.write(tx);
+					tx = null;
+				end
+			end
 		end
 	endtask 
 

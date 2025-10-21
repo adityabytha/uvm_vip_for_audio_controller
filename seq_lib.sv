@@ -233,9 +233,17 @@ class i2s_seq extends i2s_seq_base;
             		runs = 1; // fallback if not set
         	end
 		repeat(runs) begin
-		`uvm_do(req)
-		
-		#`AUDIO_CLK_FULL;	
+			`uvm_do_with(req, { req.inport_tvalid_i == 1'b1;
+	      						})
+			repeat(3) begin
+				#`DELAY_10;
+			#`DELAY_10;
+			#`FULL_100;
+			#`DELAY_10;
+			#`DELAY_10;
+			#`DELAY_10;
+			#`DELAY_10;
+		end
 		end
 		`uvm_info("I2S_SEQ","Running",UVM_HIGH)
 	endtask	
@@ -393,10 +401,10 @@ class cfg_seq_i2s extends uvm_sequence#(audio_tx);
 			})
 			#`CLK_I_FULL; //for values to read
 			#`CLK_I_FULL; //to get ack response
-			repeat(158) begin
-			//fifo write to fill some data into fifo and observe
-			//the irq_o
-			`uvm_do_with(req, { req.cfg_awaddr_i[7:0] == `AUDIO_FIFO_WRITE;
+			repeat(10) begin
+				//fifo write to fill some data into fifo and observe
+				//the irq_o
+				`uvm_do_with(req, { req.cfg_awaddr_i[7:0] == `AUDIO_FIFO_WRITE;
 						req.cfg_awvalid_i == 1;
 						req.cfg_arvalid_i == 0;
 						req.cfg_bready_i == 1;
@@ -404,24 +412,42 @@ class cfg_seq_i2s extends uvm_sequence#(audio_tx);
 						req.cfg_wdata_i[`AUDIO_FIFO_WRITE_CH_B_R] == 16'habcd;
 						req.cfg_wdata_i[`AUDIO_FIFO_WRITE_CH_A_R] == 16'hface;
 					})
-			#`CLK_I_FULL; //for values to read
-			#`CLK_I_FULL; //to get ack response
-			//fifo write to fill some data into fifo and observe
-			//the irq_o
-			`uvm_do_with(req, { req.cfg_awaddr_i[7:0] == `AUDIO_FIFO_WRITE;
-						req.cfg_awvalid_i == 1;
-						req.cfg_arvalid_i == 0;
-						req.cfg_bready_i == 1;
-						req.cfg_wvalid_i == 1;
-						req.cfg_wdata_i[`AUDIO_FIFO_WRITE_CH_B_R] == 16'hceda;
-						req.cfg_wdata_i[`AUDIO_FIFO_WRITE_CH_A_R] == 16'hdeba;
-					})
-			#`CLK_I_FULL; //for values to read
-			#`CLK_I_FULL; //to get ack response
-			end	
+
+				#`DELAY_10; //for values to read
+			end
 		end
 		`uvm_info("AUDIO_SEQ","Running",UVM_HIGH)
 	endtask	
 	
 endclass
+
+//------Driving i2s heirarchy directly and checking with scoreboard-----
+
+class i2s_seq_sco extends i2s_seq_base;
+	`uvm_object_utils(i2s_seq_sco)
+	`NEW_OBJ
+	int runs;
+	task body();
+		if (!uvm_resource_db#(int)::read_by_name("*", "runs", runs, this)) begin
+            		runs = 1; // fallback if not set
+        	end
+		repeat(runs) begin
+			`uvm_do_with(req, { req.inport_tvalid_i == 1'b1;
+						req.inport_tdata_i == 32'haaaa_aaaa;
+	      						})
+			repeat(3) begin
+				#`DELAY_10;
+			#`DELAY_10;
+			#`FULL_100;
+			#`DELAY_10;
+			#`DELAY_10;
+			#`DELAY_10;
+			#`DELAY_10;
+		end
+		end
+		`uvm_info("I2S_SEQ","Running",UVM_HIGH)
+	endtask	
+	
+endclass
+
 

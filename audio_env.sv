@@ -12,9 +12,13 @@ class audio_env extends uvm_env;
 	`NEW
 	bit [3:0] ag_sel;
 
-	
+	i2s_scoreboard main_scoreboard_i;
+
 	
 	function void build_phase(uvm_phase phase);
+		main_scoreboard_i = i2s_scoreboard::type_id::create("main_scoreboard_i",this); //creating one scoreboard now and connecting to I2S for now change name to i2s later
+		
+
 		uvm_resource_db#(int)::read_by_name("GLOBAL","AGENT_SELECT",ag_sel,this);
 		case(ag_sel)
 			4'h0: begin
@@ -45,4 +49,10 @@ class audio_env extends uvm_env;
 				end
 		endcase
 	endfunction
+	
+	function void connect_phase(uvm_phase phase);
+		i2s_agent_i.mon.ap_port.connect(main_scoreboard_i.any_in);
+		i2s_agent_i.drv.ap_port.connect(main_scoreboard_i.any_in);
+	endfunction
+
 endclass

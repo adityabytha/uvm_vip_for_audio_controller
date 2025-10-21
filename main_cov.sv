@@ -18,7 +18,7 @@ class main_cov extends uvm_subscriber#(audio_tx);
 			bins half_1={[0:32'h80000000]};
 			bins half_2={[32'h80000001:$]};
 		}
-	   coverpoint tx.cfg_wstrb_i;
+//	   coverpoint tx.cfg_wstrb_i;
 	   coverpoint tx.cfg_bready_i;
 	   coverpoint tx.cfg_arvalid_i;
 	   coverpoint tx.cfg_araddr_i{
@@ -59,7 +59,7 @@ class main_cov extends uvm_subscriber#(audio_tx);
 		awaddr: coverpoint tx.cfg_awaddr_i { bins range[20] = {[0:$]}; option.at_least = 34;	}
 	   coverpoint tx.cfg_wvalid_i;
 	   wdata: coverpoint tx.cfg_wdata_i { bins range[20] = {[0:$]}; option.at_least = 34;	}
-	   coverpoint tx.cfg_wstrb_i;
+	//   coverpoint tx.cfg_wstrb_i;
 	   coverpoint tx.cfg_bready_i;
 	   coverpoint tx.cfg_arvalid_i;
 	   coverpoint tx.cfg_araddr_i{ bins range[20] = {[0:$]}; option.at_least = 34;	}

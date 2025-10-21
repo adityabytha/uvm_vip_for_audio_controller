@@ -8,7 +8,7 @@ class i2s_tx extends uvm_sequence_item;
      bit  [  3:0]  inport_tdest_i;
      bit           inport_tlast_i;
 
-    // rand bits
+    // outputs
      bit          inport_tready_o;
      bit          i2s_sck_o;
      bit          i2s_sdata_o;
