@@ -34,6 +34,7 @@ class i2s_mon extends uvm_monitor;
 					tx.i2s_sdata_o = vif.i2s_sdata_o;
 					tx.i2s_ws_o = vif.i2s_ws_o;
 					tx.print();
+					`uvm_info("MON","----------",UVM_HIGH)
 					ap_port.write(tx);
 					tx = null;
 				end

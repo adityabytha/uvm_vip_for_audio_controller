@@ -433,17 +433,14 @@ class i2s_seq_sco extends i2s_seq_base;
         	end
 		repeat(runs) begin
 			`uvm_do_with(req, { req.inport_tvalid_i == 1'b1;
-						req.inport_tdata_i == 32'haaaa_aaaa;
+						req.inport_tdata_i == 32'hffff_7fff;
 	      						})
-			repeat(3) begin
-				#`DELAY_10;
-			#`DELAY_10;
-			#`FULL_100;
-			#`DELAY_10;
-			#`DELAY_10;
-			#`DELAY_10;
-			#`DELAY_10;
-		end
+		//	#5;
+		//	`uvm_do_with(req, { req.inport_tvalid_i == 1'b0; })
+		#5040;
+			//repeat(3) begin
+		//	#`FULL_100;
+		//	end
 		end
 		`uvm_info("I2S_SEQ","Running",UVM_HIGH)
 	endtask	

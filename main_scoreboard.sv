@@ -80,11 +80,10 @@ class i2s_scoreboard extends uvm_scoreboard;
     any_in = new("any_in", this);
   endfunction
 
-  // Single entry point with cast-based dispatch
-//  function void write(base_t t);
-  function void write(i2s_tx t);
     i2s_tx tr,tr1;
-    i2s_evt_t    evt;
+    //i2s_evt_t    evt;
+  // Single entry point with cast-based dispatch
+  function void write(i2s_tx t);
 
 //	t.print();
     if (t.get_name() == "i2s_tx_DRV" && $cast(tr, t)) begin	//this if block gets input data from drv and writes expected values to the queue tmp[]
@@ -100,23 +99,40 @@ class i2s_scoreboard extends uvm_scoreboard;
 	//write code for converting the i2s_tx from MON to i2s_event struct
 	i2s_evt_t tmp1 = m.event_record(tr1);
 	dut_q.push_back(tmp1);
-
+	
           //`uvm_info("I2S_SCB","This is working, the code is in $cast(evt,t)  ----------------------",UVM_NONE)
-      if (exp_q.size() > 0) begin			//this if block does the actual checking by comparing values from both queues and gives match or mismatch print
-        i2s_evt_t exp = exp_q.pop_front();
-        if (evt.ws !== exp.ws || evt.data_bit !== exp.data_bit) begin
-          //`uvm_info("I2S_SCB","This is working, the code is in $cast(evt,t)  ----------------------",UVM_NONE)
-		`uvm_error("I2S_SCB",$sformatf("Mismatch bit%0d: ws exp=%0b got=%0b, data exp=%0b got=%0b",exp.bit_idx, exp.ws, evt.ws, exp.data_bit, evt.data_bit))
-        end
-       	if (evt.ws == exp.ws || evt.data_bit == exp.data_bit) begin
-		`uvm_info("I2S_SCB",$sformatf("Match bit%0d: ws exp=%0b got=%0b, data exp=%0b got=%0b",exp.bit_idx, exp.ws, evt.ws, exp.data_bit, evt.data_bit),UVM_INFO)
-        end
-
+      
       end
       return;
-    end
+   // end
 
+//	$display("THIS IS FROM DRIVER -- %p",exp_q); //once print and check back
+  //   	$display("THIS IS FROM THE DUT --  %p",dut_q);
     `uvm_warning("I2S_SCB", $sformatf("Unexpected item type: %s", t.get_type_name()))
   endfunction
+
+  function void extract_phase(uvm_phase phase);
+
+  endfunction
+
+  function void check_phase(uvm_phase phase);
+		`uvm_info("SCO","Check Phase",UVM_LOW)
+		`uvm_info("SCO",$sformatf("Queue of dut o/p size = %d",dut_q.size()),UVM_HIGH)
+		`uvm_info("SCO",$sformatf("Queue of expected o/p size = %d",exp_q.size()),UVM_HIGH)
+		for(int i = exp_q.size(); i>=0; i--) begin
+        		i2s_evt_t exp = exp_q.pop_front();
+			i2s_evt_t evt = dut_q.pop_front();
+        		if (evt.ws !== exp.ws || evt.data_bit !== exp.data_bit) begin
+      				//`uvm_info("I2S_SCB","This is working, the code is in $cast(evt,t)  ----------------------",UVM_NONE)
+				`uvm_error("I2S_SCB",$sformatf("Mismatch bit%0d: ws exp=%0b got=%0b, data exp=%0b got=%0b",exp.bit_idx, exp.ws, evt.ws, exp.data_bit, evt.data_bit))
+			end else begin
+       			//if (evt.ws == exp.ws || evt.data_bit == exp.data_bit) begin
+				`uvm_info("I2S_SCB",$sformatf("Check bit%0d: ws exp=%0b got=%0b, data exp=%0b got=%0b",exp.bit_idx, exp.ws, evt.ws, exp.data_bit, evt.data_bit),UVM_INFO)
+        		end
+			//`uvm_info("SCO",$sformatf("i = %d",i),UVM_HIGH)
+		end  
+
+  endfunction
+
 endclass
 	

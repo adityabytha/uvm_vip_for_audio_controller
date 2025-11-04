@@ -1,41 +1,4 @@
 // Reference model (predictor) that maps 32-bit commands to expected I2C fields
-/*
-class i2s_ref_model extends uvm_component;
-  `uvm_component_utils(i2s_ref_model)
-
-  // Analysis export to receive commands; analysis port to publish predictions
-  uvm_analysis_imp#(i2s_tx, i2c_ref_model) cmd_in;
-  uvm_analysis_port#(i2c_tn)               exp_ap;
-
-  function new(string name, uvm_component parent);
-    super.new(name, parent);
-    cmd_in = new("cmd_in", this);
-    exp_ap = new("exp_ap", this);
-  endfunction
-
-  // Predict function: spec-level transform from cmd -> expected transaction
-  virtual function i2c_txn predict(i2s_tx c);
-    i2s_tx t = i2s_tx::type_id::create("t");
-    t.addr = c.cmd[31:25];
-    t.rw   = c.cmd[24];
-    t.data.delete();
-	// inport_tdata_i
-	// 
-    // Example: always 3 bytes in this encoding
-    t.data.push_back(byte'(c.cmd[23:16]));
-    t.data.push_back(byte'(c.cmd[15:8]));
-    t.data.push_back(byte'(c.cmd[7:0]));
-    return t;
-  endfunction
-
-  // Called when a command arrives via analysis imp
-  virtual function void write(i2c_cmd c);
-    i2c_txn exp = predict(c);
-    exp_ap.write(exp); // publish expected transaction to scoreboard
-  endfunction
-endclass
-*/
-
 // Abstract event describing an I2S strobe at sck falling edge
 typedef struct packed {
   bit        ws;          // 0: Right, 1: Left

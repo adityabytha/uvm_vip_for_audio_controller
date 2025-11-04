@@ -66,7 +66,7 @@ class i2s_driver extends uvm_driver#(i2s_tx);
 			seq_item_port.get_next_item(req);
 			drive_tx(req);
 			convert_to_tx(req);
-			tx.print();
+			//tx.print();
 			ap_port.write(tx);
 			seq_item_port.item_done();
 		end
